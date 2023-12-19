@@ -1,0 +1,2 @@
+class GenerateMapsController < ApplicationController
+end

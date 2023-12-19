@@ -1,0 +1,2 @@
+class GeneratedEnemysController < ApplicationController
+end

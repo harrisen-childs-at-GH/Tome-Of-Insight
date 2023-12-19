@@ -1,0 +1,2 @@
+class GenerateItemsController < ApplicationController
+end
