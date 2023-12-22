@@ -487,6 +487,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2)
   figaro (~> 1.2)
   has_scope (~> 0.8.0)
+  heroicon
   httparty (~> 0.20.0)
   image_processing (~> 1.2)
   importmap-rails (~> 1.2)

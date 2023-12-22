@@ -1,0 +1,64 @@
+<div class="w-screen bg-lightBrown flex flex-col justify-between align-center">
+<section class="w-screen bg-lightBrown dark:bg-gray-900">
+  <div class="flex flex-col items-center justify-evenly justify-items-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <a href="#" class="flex flex-col items-center tracking-widest text-4xl font-semibold text-white dark:text-white">
+          Tome of Insight   
+                          <img class="w-10 h-10 mb-46 " src="/assets/ToILogotrans.png" alt="logo">
+ 
+      </a>
+
+    <div class="bg-white flex flex-row items-center justify-between justify-items-center rounded-lg w-fit h-30 p-4">
+      <%= heroicon "information-circle",  variant: :outline, options: { class: "w-8 h-8 mr-4"} %>
+            <%= devise_error_messages! %>
+    </div>
+
+      <%= simple_form_for(resource, as: resource_name,  builder: SimpleForm::Tailwind::FormBuilder, url: registration_path(resource_name)) do |f| %>
+          <div class="w-screen bg-light rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                            <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                                Create an account
+                            </h1>
+                            <form class="space-y-4 md:space-y-6" action="#">
+                                <div>
+                                  <%= f.label :email, class: "form-label"%>
+                                          <%= f.input :email,
+                                    autofocus: true,
+                                    required: true,
+                                    placeholder: "Email",
+                                    label: false,
+                                    input_html: {class: "bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-lightBrown focus:border-lightBrown block w-full p-2.5"} %>
+                               
+                                </div>
+                                <div>
+                                   <%= f.label :password, class: "form-label"%>
+
+                                     <%= f.input :password,
+                                  required: true,
+                                  placeholder: "Password",
+                                  label: false,
+                                  hint: ("#{@minimum_password_length} characters minimum" if @devise_error_messages),
+                                  input_html: { autocomplete: "new-password", class: "bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-lightBrown focus:border-lightBrown block w-full p-2.5"  } %>
+                                </div>
+                                <div>
+                                   <%= f.label :password_confirmation, class: "form-label"%>
+
+                                     <%= f.input :password_confirmation,
+                                  required: true,
+                                  placeholder: "Confirm Password",
+                                  label: false,
+                                  input_html: { autocomplete: "new-password", class: "bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-lightBrown focus:border-lightBrown block w-full p-2.5"  } %>
+                                </div>
+                                          <div class="form-actions">
+                      <%= f.submit "Sign Up", 
+                      class: "w-full text-white bg-darkBrown hover:bg-lightBrown focus:ring-4 focus:outline-none focus:ring-lightBrown font-medium rounded-lg text-sm px-5 py-2.5 text-center" %>
+                    </div>
+                      <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                          Already have an account? <a href="#" class="font-medium text-darkBrown hover:underline dark:text-white">Login here</a>
+                      </p>
+                  </form>
+              </div>
+          </div>
+      <% end %>
+
+  </div>
+</section>

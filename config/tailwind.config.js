@@ -1,8 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
   content: [
+    `${process.env.SIMPLE_FORM_TAILWIND_DIR}/**/*.rb`,
     './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
@@ -11,10 +11,10 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'light': '#D9D9D9',
-      'lightBrown': '#7E481C',
-      'darkBrown': '#351E10',
-      'mid': '#9A8E88'
+      light: '#D9D9D9',
+      lightBrown: '#7E481C',
+      darkBrown: '#351E10',
+      mid: '#9A8E88',
     },
     fontFamily: {
       sans: ['Belleza', 'sans-serif'],
@@ -27,12 +27,6 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
-      },
-      colors: {
-        'light': '#D9D9D9',
-        'lightBrown': '#7E481C',
-        'darkBrown': '#351E10',
-        'mid': '#9A8E88'
       }
     }
   },
@@ -42,5 +36,22 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
     require('flowbite/plugin')
-  ]
+  ],
+   // make sure to safelist these classes when using purge
+   safelist: [
+    'w-64',
+    'w-1/2',
+    'rounded-l-lg',
+    'rounded-r-lg',
+    'bg-gray-200',
+    'grid-cols-4',
+    'grid-cols-7',
+    'h-6',
+    'leading-6',
+    'h-9',
+    'leading-9',
+    'shadow-lg',
+    'dark'
+  ],
+
 }
