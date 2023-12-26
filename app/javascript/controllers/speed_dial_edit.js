@@ -35,7 +35,10 @@ const instanceOptions = {
   id: 'dialContent',
   override: true
 };
-
-export function showDial() {
+function showDial() {
     dial.show();
 }
+document.getElementById('dialButton').onclick = function() {
+    console.log("clicked");
+    showDial();
+};

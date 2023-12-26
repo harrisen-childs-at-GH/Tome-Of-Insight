@@ -1,129 +1,173 @@
-<div id="dialParent" class="group fixed bottom-6 end-6">
-    <div
-        id="dialContent"
-        class="mb-4 flex hidden flex-col items-center space-y-2">
-        <button
-            type="button"
-            data-tooltip-target="tooltip-share"
-            data-tooltip-placement="left"
-            class="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 shadow-sm hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-400">
-            <svg
-                class="h-5 w-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 18">
-                <path
-                    d="M14.419 10.581a3.564 3.564 0 0 0-2.574 1.1l-4.756-2.49a3.54 3.54 0 0 0 .072-.71 3.55 3.55 0 0 0-.043-.428L11.67 6.1a3.56 3.56 0 1 0-.831-2.265c.006.143.02.286.043.428L6.33 6.218a3.573 3.573 0 1 0-.175 4.743l4.756 2.491a3.58 3.58 0 1 0 3.508-2.871Z"/>
-            </svg>
-            <span class="sr-only">Share</span>
-        </button>
-        <div
-            id="tooltip-share"
-            role="tooltip"
-            class="tooltip invisible absolute z-10 inline-block w-auto rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-            Share
-            <div class="tooltip-arrow" data-popper-arrow></div>
+<div class="w-screen h-screen bg-white flex flex-col justify-stretch align-center">
+    <div class="w-screen grid flex ">
+        <nav class="bg-lightBrown rounded-b-lg justify-self-center w-screen md:w-6/12">
+            <div class="flex flex-row items-center justify-between mx-auto p-4 rounded-sm">
+                <a href="/landing" class="flex items-center space-x-3 ">
+                    <img src="/assets/ToILogotrans.png" class="h-12" alt="ToI logo" />
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="contents sm:hidden inline-flex items-center p-2 w-screen h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-lightBrown" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+                <div class="hidden sm:contents justify-end block" id="navbar-default">
+                    <ul class="font-medium flex flex-row items-center justify-end p-6 md:p-0 mt-4 border border-lightBrown rounded-lg bg-lightBrown md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-lightBrown">
+                       
+                        <li>
+                        <a href="#" class="block py-2 px-3 text-white bg-lightBrown rounded">Characters</a>
+                        </li>
+                        
+                        <li>
+                        <a href="#" class="block py-2 px-3 text-white bg-lightBrown rounded">Settings</a>
+                        </li>
+                        <li>
+                        <a href="#" class="btn py-2 px-3 text-white bg-darkBrown rounded">Account</a>
+                        </li>
+                    </ul>
+                 </div>
+        </nav>
+    </div>
+
+    <div class="p-6 flex justify-center w-screen grid grid-cols-1 gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2"> 
+    <%# campaign card %>
+        <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
+            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
+                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
+            </div>
+            <div class="p-2 flex flex-col justify-around">
+                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
+                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
+                </ul>
+                <div class="flex flex-row items-center justify-around">
+                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
+                        Resume
+                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
+
+                    </a>
+                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
+                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
+
+                    </a>
+                    <p class="flex justify-center">Last Played: 12/26/2023</p>
+
+                </div>
+            </div>
         </div>
-        <button
-            type="button"
-            data-tooltip-target="tooltip-print"
-            data-tooltip-placement="left"
-            class="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 shadow-sm hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-400">
-            <svg
-                class="h-5 w-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20">
-                <path d="M5 20h10a1 1 0 0 0 1-1v-5H4v5a1 1 0 0 0 1 1Z" />
-                <path
-                    d="M18 7H2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-1-2V2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3h14Z"/>
-            </svg>
-            <span class="sr-only">Print</span>
-        </button>
-        <div
-            id="tooltip-print"
-            role="tooltip"
-            class="tooltip invisible absolute z-10 inline-block w-auto rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-            Print
-            <div class="tooltip-arrow" data-popper-arrow></div>
+
+ <%# delete after styling %>
+  <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
+            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
+                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
+            </div>
+            <div class="p-2 flex flex-col justify-around">
+                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
+                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
+                </ul>
+                <div class="flex flex-row items-center justify-around">
+                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
+                        Resume
+                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
+
+                    </a>
+                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
+                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
+
+                    </a>
+                    <p class="flex justify-center">Last Played: 12/26/2023</p>
+
+                </div>
+            </div>
         </div>
-        <button
-            type="button"
-            data-tooltip-target="tooltip-download"
-            data-tooltip-placement="left"
-            class="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 shadow-sm hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-400">
-            <svg
-                class="h-5 w-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20">
-                <path
-                    d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"/>
-                <path
-                    d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-            </svg>
-            <span class="sr-only">Download</span>
-        </button>
-        <div
-            id="tooltip-download"
-            role="tooltip"
-            class="tooltip invisible absolute z-10 inline-block w-auto rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-            Download
-            <div class="tooltip-arrow" data-popper-arrow></div>
+         <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
+            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
+                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
+            </div>
+            <div class="p-2 flex flex-col justify-around">
+                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
+                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
+                </ul>
+                <div class="flex flex-row items-center justify-around">
+                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
+                        Resume
+                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
+
+                    </a>
+                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
+                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
+
+                    </a>
+                    <p class="flex justify-center">Last Played: 12/26/2023</p>
+
+                </div>
+            </div>
         </div>
-        <button
-            type="button"
-            data-tooltip-target="tooltip-copy"
-            data-tooltip-placement="left"
-            class="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 shadow-sm hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-400">
-            <svg
-                class="h-5 w-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 20"
-            >
-                <path
-                    d="M5 9V4.13a2.96 2.96 0 0 0-1.293.749L.879 7.707A2.96 2.96 0 0 0 .13 9H5Zm11.066-9H9.829a2.98 2.98 0 0 0-2.122.879L7 1.584A.987.987 0 0 0 6.766 2h4.3A3.972 3.972 0 0 1 15 6v10h1.066A1.97 1.97 0 0 0 18 14V2a1.97 1.97 0 0 0-1.934-2Z"
-                />
-                <path
-                    d="M11.066 4H7v5a2 2 0 0 1-2 2H0v7a1.969 1.969 0 0 0 1.933 2h9.133A1.97 1.97 0 0 0 13 18V6a1.97 1.97 0 0 0-1.934-2Z"
-                />
-            </svg>
-            <span class="sr-only">Copy</span>
-        </button>
-        <div
-            id="tooltip-copy"
-            role="tooltip"
-            class="tooltip invisible absolute z-10 inline-block w-auto rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
-        >
-            Copy
-            <div class="tooltip-arrow" data-popper-arrow></div>
+         <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
+            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
+                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
+            </div>
+            <div class="p-2 flex flex-col justify-around">
+                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
+                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
+                </ul>
+                <div class="flex flex-row items-center justify-around">
+                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
+                        Resume
+                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
+
+                    </a>
+                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
+                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
+
+                    </a>
+                    <p class="flex justify-center">Last Played: 12/26/2023</p>
+
+                </div>
+            </div>
+        </div>
+         <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
+            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
+                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
+            </div>
+            <div class="p-2 flex flex-col justify-around">
+                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
+                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
+                </ul>
+                <div class="flex flex-row items-center justify-around">
+                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
+                        Resume
+                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
+
+                    </a>
+                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
+                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
+
+                    </a>
+                    <p class="flex justify-center">Last Played: 12/26/2023</p>
+
+                </div>
+            </div>
         </div>
     </div>
-    <button
-        type="button"
-        id="dialButton"
-        aria-controls="speed-dial-menu-default"
-        onclick=dial.show()
-        aria-expanded="false"
-        class="flex h-14 w-14 items-center justify-center rounded-full bg-blue-700 text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        <svg
-            class="h-5 w-5 transition-transform group-hover:rotate-45"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 18 18">
-            <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 1v16M1 9h16"/>
-        </svg>
-        <span class="sr-only">Open actions menu</span>
-    </button>
+
 </div>
