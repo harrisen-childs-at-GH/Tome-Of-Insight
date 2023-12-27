@@ -31,14 +31,15 @@
 
     <div class="p-6 flex justify-center w-screen grid grid-cols-1 gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2"> 
     <%# campaign card %>
+    <% @user_campaigns.each do |campaign| %>
         <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
             <div class="bg-lightBrown max-w-sm rounded-sm p-1">
-                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
+                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white"><%= campaign.name %></h5>
             </div>
             <div class="p-2 flex flex-col justify-around">
                 <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
                     <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg"><%= @user.email %></li>
                     <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
                     <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
                     <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
@@ -58,116 +59,6 @@
                 </div>
             </div>
         </div>
-
- <%# delete after styling %>
-  <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
-            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
-                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
-            </div>
-            <div class="p-2 flex flex-col justify-around">
-                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
-                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
-                </ul>
-                <div class="flex flex-row items-center justify-around">
-                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
-                        Resume
-                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
-
-                    </a>
-                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
-                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
-
-                    </a>
-                    <p class="flex justify-center">Last Played: 12/26/2023</p>
-
-                </div>
-            </div>
-        </div>
-         <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
-            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
-                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
-            </div>
-            <div class="p-2 flex flex-col justify-around">
-                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
-                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
-                </ul>
-                <div class="flex flex-row items-center justify-around">
-                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
-                        Resume
-                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
-
-                    </a>
-                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
-                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
-
-                    </a>
-                    <p class="flex justify-center">Last Played: 12/26/2023</p>
-
-                </div>
-            </div>
-        </div>
-         <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
-            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
-                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
-            </div>
-            <div class="p-2 flex flex-col justify-around">
-                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
-                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
-                </ul>
-                <div class="flex flex-row items-center justify-around">
-                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
-                        Resume
-                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
-
-                    </a>
-                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
-                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
-
-                    </a>
-                    <p class="flex justify-center">Last Played: 12/26/2023</p>
-
-                </div>
-            </div>
-        </div>
-         <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
-            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
-                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white">Gates of Elbaf</h5>
-            </div>
-            <div class="p-2 flex flex-col justify-around">
-                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
-                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Sam C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
-                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
-                </ul>
-                <div class="flex flex-row items-center justify-around">
-                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
-                        Resume
-                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
-
-                    </a>
-                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
-                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
-
-                    </a>
-                    <p class="flex justify-center">Last Played: 12/26/2023</p>
-
-                </div>
-            </div>
-        </div>
-    </div>
+    <%end %>
 
 </div>
