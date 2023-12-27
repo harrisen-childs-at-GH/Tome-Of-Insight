@@ -1,0 +1,2 @@
+module GenerateItemsHelper
+end

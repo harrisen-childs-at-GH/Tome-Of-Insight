@@ -1,0 +1,2 @@
+class GeneratedLocationsController < ApplicationController
+end

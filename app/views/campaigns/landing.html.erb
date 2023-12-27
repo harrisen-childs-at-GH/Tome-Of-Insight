@@ -1,0 +1,64 @@
+<div class="w-screen h-screen bg-white flex flex-col justify-stretch align-center">
+    <div class="w-screen grid flex ">
+        <nav class="bg-lightBrown rounded-b-lg justify-self-center w-screen md:w-6/12">
+            <div class="flex flex-row items-center justify-between mx-auto p-4 rounded-sm">
+                <a href="/landing" class="flex items-center space-x-3 ">
+                    <img src="/assets/ToILogotrans.png" class="h-12" alt="ToI logo" />
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="contents sm:hidden inline-flex items-center p-2 w-screen h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-lightBrown" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+                <div class="hidden sm:contents justify-end block" id="navbar-default">
+                    <ul class="font-medium flex flex-row items-center justify-end p-6 md:p-0 mt-4 border border-lightBrown rounded-lg bg-lightBrown md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-lightBrown">
+                       
+                        <li>
+                        <a href="#" class="block py-2 px-3 text-white bg-lightBrown rounded">Characters</a>
+                        </li>
+                        
+                        <li>
+                        <a href="#" class="block py-2 px-3 text-white bg-lightBrown rounded">Settings</a>
+                        </li>
+                        <li>
+                        <a href="#" class="btn py-2 px-3 text-white bg-darkBrown rounded">Account</a>
+                        </li>
+                    </ul>
+                 </div>
+        </nav>
+    </div>
+
+    <div class="p-6 flex justify-center w-screen grid grid-cols-1 gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2"> 
+    <%# campaign card %>
+    <% @user_campaigns.each do |campaign| %>
+        <div class=" max-w-sm bg-light border border-lightBrown border-4 rounded-lg shadow">
+            <div class="bg-lightBrown max-w-sm rounded-sm p-1">
+                <h5 class="text-2xl font-bold tracking-tight text-white dark:text-white"><%= campaign.name %></h5>
+            </div>
+            <div class="p-2 flex flex-col justify-around">
+                <ul class="leading-snug text-sm font-medium text-darkBrown bg-light rounded-lg mb-2">
+                    <li class="w-full px-4 py-2 border-b border-darkBrown rounded-t-lg">Players:</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg"><%= @user.email %></li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Harris C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Nikki C</li>
+                    <li class="w-full px-4 py-2 rounded-t-lg">Zeus C</li>
+                </ul>
+                <div class="flex flex-row items-center justify-around">
+                    <a  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown">
+                        Resume
+                    <%= heroicon "play",  variant: :outline, options: { class: "w-6 h-6 ml-1"} %> 
+
+                    </a>
+                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
+                                        <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
+
+                    </a>
+                    <p class="flex justify-center">Last Played: 12/26/2023</p>
+
+                </div>
+            </div>
+        </div>
+    <%end %>
+
+</div>

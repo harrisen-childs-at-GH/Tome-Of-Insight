@@ -1,6 +1,8 @@
 # README
 *  ruby bin/rails server
+*  rails tailwindcss:watch
 
+made with rails, tailwind, flowbite
 
 erdiagram 12/16/2023
 ```mermaid

@@ -1,0 +1,2 @@
+class GeneratedNpCsController < ApplicationController
+end

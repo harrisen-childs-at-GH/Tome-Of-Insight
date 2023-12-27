@@ -132,3 +132,5 @@ gem 'solargraph', '~> 0.49.0'
 gem "ruby-openai"
 
 gem "importmap-rails", "~> 1.2"
+
+gem "heroicon"
