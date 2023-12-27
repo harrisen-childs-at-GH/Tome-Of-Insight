@@ -5,11 +5,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   def new
+    binding.pry
+
     @user = User.new
     binding.pry
   end
 
   def create
+    #broke
+   binding.pry
     @user = User.new(user_params)
 
     if @user.after_save
