@@ -9,4 +9,8 @@ class CampaignsController < ApplicationController
       redirect_to root_path, notice: 'You are not logged in.'
     end
   end
+
+  def show
+    @campaign = Campaign.find(params[:id])
+  end
 end

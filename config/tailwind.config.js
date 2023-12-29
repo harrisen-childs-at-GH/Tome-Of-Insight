@@ -10,6 +10,28 @@ module.exports = {
     './node_modules/flowbite/**/*.js'
   ],
   theme: {
+      patterns: {
+        opacities: {
+            100: "1",
+            80: ".80",
+            60: ".60",
+            40: ".40",
+            20: ".20",
+            10: ".10",
+            5: ".05",
+        },
+        sizes: {
+            1: "0.25rem",
+            2: "0.5rem",
+            4: "1rem",
+            6: "1.5rem",
+            8: "2rem",
+            16: "4rem",
+            20: "5rem",
+            24: "6rem",
+            32: "8rem",
+        }
+    },
     colors: {
       light: '#D9D9D9',
       transBrown: '#776960',
@@ -36,7 +58,8 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    require('tailwindcss-bg-patterns')
   ],
    // make sure to safelist these classes when using purge
    safelist: [
