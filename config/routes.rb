@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/landing', to: 'campaigns#landing'
   get '/campaigns/:id', to: 'campaigns#show', as: 'campaign'
+  get '/campaigns/:id/notes', to: 'notes#list', as: 'campaign_notes'
+  get '/campaigns/:id/new_note', to: 'notes#new', as: 'campaign_new_note'
   devise_scope :user do
     get '/login', to: 'users/sessions#new', as: :my_new_user_session
     post '/users/sign_in', to: 'users/sessions#create', as: :my_user_session
