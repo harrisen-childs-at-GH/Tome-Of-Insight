@@ -12,8 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    #broke
-   binding.pry
     @user = User.new(user_params)
 
     if @user.after_save
@@ -22,6 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new, status: :unproceessable_entity
     end
   end
+
   # GET /resource/edit
   # def edit
   #   super

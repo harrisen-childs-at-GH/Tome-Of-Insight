@@ -5,15 +5,20 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    if user_signed_in?
+    binding.pry
+    return unless user_signed_in?
     redirect_to landing_path
-    end
   end
 
   # POST /resource/sign_in
   def create
     binding.pry
-    super
+
+    resource = User.find_by(email: params[:user][:email])
+
+    resource = warden.authenticate!(scope: resource_name)
+    sign_in(resource_name, resource)
+    redirect_to landing_path
   end
 
   # DELETE /resource/sign_out
