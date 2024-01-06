@@ -1,0 +1,11 @@
+<div class="w-screen h-screen bg-light flex flex-col align-center">
+<ul>
+    <%= @notes.each do |note| %>
+        <li>
+            <%= note.id %>
+            <%= note.entry %>
+        </li>
+    <%end%>
+</ul>
+<%= link_to "create", campaign_new_note_path,  class: "btn py-2 px-3 text-white bg-darkBrown rounded" %>
+</div>
