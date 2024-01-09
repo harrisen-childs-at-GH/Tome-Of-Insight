@@ -13,7 +13,7 @@
 
 
     <div class="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-lightBrown border border-darkBrown rounded-full bottom-4 left-1/2">
-        <div class="grid h-full max-w-lg grid-cols-6 mx-auto">
+        <div class="grid h-full max-w-lg grid-cols-6 mx-auto flex items-center">
             <button data-tooltip-target="tooltip-combat" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-darkBrown dark:hover:bg-gray-800 group">
                 <%= heroicon "shield-exclamation", variant: :outline, options: { class: "w-6 h-6 mb-1 text-white" } %>
                 <span class="sr-only">combat</span>
@@ -41,16 +41,22 @@
                 <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
 
-            <button data-tooltip-target="tooltip-generate" type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-darkBrown dark:hover:bg-gray-800 group">
-                <%= heroicon "queue-list", variant: :outline, options: { class: "w-6 h-6 mb-1 text-white" } %>
-                <span class="sr-only">generate</span>
-            </button>
+
+             <%= link_to campaign_generation_path, 
+            action: "get", 'data-toggle': 'tooltip-generate',
+            html_options: {class: "inline-flex flex-col items-center justify-items-center hover:bg-darkBrown "} do %>
+             <span>  <%= heroicon "queue-list", variant: :outline, options: { class: "text-center justify-items-center w-6 h-6 mb-1 text-white" } %></span>
+            <% end %>
             <div id="tooltip-generate" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                 Generate
                 <div class="tooltip-arrow" data-popper-arrow></div>
             </div>
 
-            <%= link_to "notes", campaign_notes_path, action: "get", 'data-toggle': 'tooltip-notes', html_options: {class: "inline-flex flex-col items-center justify-center px-5 hover:bg-darkBrown dark:hover:bg-gray-800 group"} %>
+            <%= link_to campaign_notes_path, 
+            action: "get", 'data-toggle': 'tooltip-notes',
+            html_options: {class: "inline-flex flex-col items-center justify-items-center hover:bg-darkBrown "} do %>
+             <span>  <%= heroicon "pencil-square", variant: :outline, options: { class: "text-center justify-items-center w-6 h-6 mb-1 text-white" } %></span>
+            <% end %>
             
             <%
 =begin%>

@@ -1,11 +1,21 @@
-<div class="w-screen h-screen bg-light flex flex-col align-center">
-<ul>
-    <%= @notes.each do |note| %>
-        <li>
-            <%= note.id %>
-            <%= note.entry %>
-        </li>
-    <%end%>
-</ul>
-<%= link_to "create", campaign_new_note_path,  class: "btn py-2 px-3 text-white bg-darkBrown rounded" %>
+<div class="w-screen h-screen bg-light flex flex-col align-center items-center">
+<%= link_to :back do %>
+  <%= heroicon "arrow-left-circle", variant: :outline, options: { class: "w-8 h-8 mb-1 text-darkBrown" } %>
+<% end %>
+<div class="w-screen bg-local p-6">
+    <ul class=" text-sm font-medium text-darkBrown bg-white border border-lightBrown rounded-lg">
+        <% @notes.each do |note| %>
+            <li class="w-full flex flex-col gap-y-2">
+              <div class="flex rounded-b-md bg-lightBrown text-white gap-x-2 p-2 flex-row border-b border-lightBrown items-end">  
+                 <p class="text-xl"><%= note.id %></p>
+                 <p class=""><%= note.created_at.strftime('%B %H, %C - %I:%M %p') %> </p>
+              </div>
+              <div class="p-2">
+                <%= note.entry %>
+               </div>
+            </li>
+        <%end%>
+    </ul>
+</div>
+<%= link_to "CREATE", campaign_new_note_path,  class: "btn w-36 py-2 px-3 text-center text-white bg-darkBrown rounded" %>
 </div>
