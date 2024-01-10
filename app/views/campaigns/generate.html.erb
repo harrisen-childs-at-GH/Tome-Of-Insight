@@ -1,6 +1,39 @@
-<div>
-    <a href="#" class="block max-w-md p-6 bg-darkBrown border border-white rounded-full shadow hover:bg-lightBrown">
+<div class="w-screen h-fit flex flex-col justify-center gap-y-10">
+<%
+=begin%>
+ reusable header 
+<%
+=end%>
+ <div class="w-screen flex flex-row border-b border-darkBrown items-center">
+    <%= link_to campaign_path(id: @campaign.id), class: "bg-darkBrown p-2 flex flex-row text-white tracking-widest text-2xl " do %>
+        <%= heroicon "arrow-left-circle", variant: :outline, options: { class: "w-8 h-8 mr-4 text-white" } %>
+        BACK
+    <% end %>
+    <div class="ml-4 items-center tracking-widest text-2xl ">
+        <%= @campaign.name %>
+    </div>
+ </div>
 
-    <h5 class="mb-2 text-2xl font-bold tracking-wide text-white">Generate NPC</h5>
-    </a>
+    <ul>
+        <li>
+          <%= link_to campaign_npcs_path, class: "block max-w-md p-6 bg-darkBrown border border-white rounded-full shadow hover:bg-lightBrown" do %>
+            <h5 class="mb-2 text-2xl text-center font-bold tracking-wide text-white">Generate NPC</h5>
+          <% end %>
+        </li>
+         <li>
+          <%= link_to generate_location_path, class: "block max-w-md p-6 bg-darkBrown border border-white rounded-full shadow hover:bg-lightBrown" do %>
+            <h5 class="mb-2 text-2xl text-center font-bold tracking-wide text-white">Generate Location</h5>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to generate_enemy_path, class: "block max-w-md p-6 bg-darkBrown border border-white rounded-full shadow hover:bg-lightBrown" do %>
+            <h5 class="mb-2 text-2xl text-center font-bold tracking-wide text-white">Generate Enemy</h5>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to generate_item_path, class: "block max-w-md p-6 bg-darkBrown border border-white rounded-full shadow hover:bg-lightBrown" do %>
+            <h5 class="mb-2 text-2xl text-center font-bold tracking-wide text-white">Generate Item</h5>
+          <% end %>
+        </li>
+    </ul>
 </div>

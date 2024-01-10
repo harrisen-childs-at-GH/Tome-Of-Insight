@@ -6,7 +6,7 @@ class CampaignsController < ApplicationController
       @id = current_user.id
       @user = User.find(@id)
     else
-      redirect_to root_path, notice: 'You are not logged in.'
+      redirect_to my_new_user_session_path, notice: 'You are not logged in.'
     end
   end
 
@@ -15,5 +15,6 @@ class CampaignsController < ApplicationController
   end
 
   def generate
+    @campaign = Campaign.find(params[:id])
   end
 end

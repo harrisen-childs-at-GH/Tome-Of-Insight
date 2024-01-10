@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
     def list
+        @campaign = Campaign.find(params[:id])
         @notes = Note.where(campaign_id: params[:id])
     end
 
