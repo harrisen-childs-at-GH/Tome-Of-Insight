@@ -3,6 +3,7 @@
 *  rails tailwindcss:watch
 
 made with rails, tailwind, flowbite
+RUN NPM I to install npm stylings
 
 erdiagram 12/16/2023
 ```mermaid
