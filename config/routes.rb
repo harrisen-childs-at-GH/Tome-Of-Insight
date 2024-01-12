@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get '/campaign/:id/generate', to: 'campaigns#generate', as: 'campaign_generation'
   get '/campaign/:id/generate_npc', to: 'generated_np_cs#new', as: 'campaign_npcs'
   # #update generations to campaign_xxx to work
-  get 'campaign/:id/generate_location', to: 'generated_locations#new', as: 'generate_location'
-  get 'campaign/:id/generate_enemy', to: 'generated_enemys#new', as: 'generate_enemy'
+  get 'campaign/:id/generate_location', to: 'generated_locations#new', as: 'campaign_locations'
+  get 'campaign/:id/generate_enemy', to: 'generated_enemys#new', as: 'campaign_enemy'
   get 'campaign/:id/generate_item', to: 'generate_items#new', as: 'generate_item'
   devise_scope :user do
     get '/login', to: 'users/sessions#new', as: :my_new_user_session

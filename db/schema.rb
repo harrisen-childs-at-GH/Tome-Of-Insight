@@ -10,11 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_10_014217) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_11_212137) do
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "enemies", force: :cascade do |t|
+    t.string "name"
+    t.string "traits"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "campaign_id", null: false
+    t.index ["campaign_id"], name: "index_enemies_on_campaign_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "campaign_id", null: false
+    t.string "name"
+    t.string "traits"
+    t.index ["campaign_id"], name: "index_locations_on_campaign_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -46,6 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_10_014217) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "enemies", "campaigns"
+  add_foreign_key "locations", "campaigns"
   add_foreign_key "notes", "campaigns"
   add_foreign_key "npcs", "campaigns"
 end
