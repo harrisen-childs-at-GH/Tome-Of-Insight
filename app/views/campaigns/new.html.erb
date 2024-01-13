@@ -1,0 +1,10 @@
+ <div class="w-screen h-full bg-white flex flex-col justify-center align-center">
+
+    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+    Create A Campaign
+    </h1>
+
+    <%= simple_form_for(:campaign, builder: SimpleForm::Tailwind::FormBuilder, url: create_campaign_path) do |f|%>
+        <%= f.input :name %>
+    <%end%>
+</div>

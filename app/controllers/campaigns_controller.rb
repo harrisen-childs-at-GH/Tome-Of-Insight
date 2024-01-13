@@ -10,11 +10,20 @@ class CampaignsController < ApplicationController
     end
   end
 
+  def new
+  end
+
   def show
     @campaign = Campaign.find(params[:id])
   end
 
   def generate
     @campaign = Campaign.find(params[:id])
+  end
+
+  def destroy
+    @campaign = Campaign.find(params[:id])
+    @campaign.destroy
+    redirect_to landing_path
   end
 end

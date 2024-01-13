@@ -17,10 +17,7 @@
                         <li>
                         <a href="#" class="block py-2 px-3 text-white bg-lightBrown rounded">Characters</a>
                         </li>
-                        
-                        <li>
-                        <a href="#" class="block py-2 px-3 text-white bg-lightBrown rounded">Settings</a>
-                        </li>
+                        <%= link_to "Create Campaign", new_campaign_path, class: "btn py-2 px-3 text-darkBrown bg-light rounded"%>
                         <li>
                         <a href="#" class="btn py-2 px-3 text-white bg-darkBrown rounded">Account</a>
                         </li>
@@ -46,11 +43,14 @@
                 </ul>
                 <div class="flex flex-row items-center justify-around">
                     <%= link_to 'Resume', campaign_path(campaign.id), class: "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-darkBrown rounded-lg hover:bg-lightBrown" %>
-                    <a class="inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown">
+                    <%= button_to campaign_delete_path(campaign), method: :delete, class: "inline-flex items-center px-3 py-2 tex-sm font-medium text-center text-white bg-lightBrown rounded-full hover:bg-darkBrown", data: {
+                            turbo_method: :delete,
+                            turbo_confirm: "Are you sure?"
+                        } do %>
                                         <%= heroicon "trash",  variant: :outline, options: { class: "w-6 h-6"} %> 
 
-                    </a>
-                    <p class="flex justify-center">Last Played: 12/26/2023</p>
+                    <% end %>
+                    <p class="flex justify-center">Last Played: <%= campaign.updated_at.strftime('%B %H, %C - %I:%M %p') %></p>
 
                 </div>
             </div>

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_11_212137) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_13_151430) do
+  create_table "campaign_users", force: :cascade do |t|
+    t.integer "User_id", null: false
+    t.integer "Campaign_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Campaign_id"], name: "index_campaign_users_on_Campaign_id"
+    t.index ["User_id"], name: "index_campaign_users_on_User_id"
+  end
+
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -64,6 +73,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_11_212137) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "campaign_users", "Campaigns"
+  add_foreign_key "campaign_users", "Users"
   add_foreign_key "enemies", "campaigns"
   add_foreign_key "locations", "campaigns"
   add_foreign_key "notes", "campaigns"
